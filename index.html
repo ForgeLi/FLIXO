@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09070f"><meta name="description" content="FLIXO — Your world. Your feed.">
+  <title>FLIXO — Your world. Your feed.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="FLIXO home"><span class="brand-mark">F</span><span>FLIXO<span class="brand-dot">.</span></span></a>
+    <div class="side-label">MENU</div>
+    <nav class="main-nav">
+      <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span>Home</button>
+      <button class="nav-item" data-view="explore"><span class="nav-icon">⌕</span>Explore</button>
+      <button class="nav-item" data-view="saved"><span class="nav-icon">▱</span>Saved</button>
+      <button class="nav-item" data-view="profile"><span class="nav-icon">◉</span>My profile</button>
+    </nav>
+    <div class="side-label community-label">YOUR SPACE</div>
+    <div class="sidebar-note"><div class="note-orb">✦</div><strong>Your corner of the internet.</strong><p>Share what you love and find your people.</p></div>
+    <button class="profile-mini" id="profileShortcut"><span class="avatar avatar-purple">V</span><span><b>Victor</b><small>@victor</small></span><span class="more">···</span></button>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="mobile-brand"><span class="brand-mark">F</span> FLIXO<span class="brand-dot">.</span></div>
+      <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search FLIXO..." aria-label="Search posts"></div>
+      <div class="top-actions"><button class="icon-button" id="themeHint" aria-label="Appearance">☾</button><button class="top-avatar" id="topProfile">V</button></div>
+    </header>
+
+    <section class="content-column" id="homeView">
+      <div class="welcome-row"><div><p class="eyebrow">YOUR DAILY DOSE OF EVERYTHING</p><h1>Your world<span class="purple-text">. Your feed.</span></h1><p class="subheading">See what's happening in your circle.</p></div><div class="date-pill"><span class="live-dot"></span> YOUR SPACE</div></div>
+
+      <section class="composer card">
+        <div class="composer-top"><span class="avatar avatar-purple">V</span><button class="composer-input" id="openComposer">What's happening, Victor?</button></div>
+        <div class="composer-bottom"><span class="composer-hint">Share a moment with your community</span><button class="primary-button small" id="shareButton">＋ Create post</button></div>
+      </section>
+
+      <div class="section-heading"><div><h2>Your feed</h2><p>Fresh posts from the community</p></div><button class="sort-button" id="sortButton">For you <span>⌄</span></button></div>
+      <div id="feed" class="feed-list"></div>
+      <div id="emptyState" class="empty-state hidden"><div class="empty-icon">⌕</div><h3>No posts found</h3><p>Try another search or create the first post.</p></div>
+    </section>
+
+    <section class="content-column hidden" id="exploreView"><div class="page-heading"><p class="eyebrow">DISCOVER SOMETHING NEW</p><h1>Explore<span class="purple-text">.</span></h1><p class="subheading">Find conversations and creators to follow.</p></div><div class="explore-card card"><div class="explore-symbol">✦</div><h2>Explore is just getting started</h2><p>As more people join FLIXO, this space will fill with trending posts and creators.</p><button class="primary-button" data-go-home>Back to feed</button></div></section>
+
+    <section class="content-column hidden" id="savedView"><div class="page-heading"><p class="eyebrow">YOUR PERSONAL COLLECTION</p><h1>Saved<span class="purple-text">.</span></h1><p class="subheading">Posts you want to come back to.</p></div><div id="savedFeed" class="feed-list"></div><div id="savedEmpty" class="empty-state"><div class="empty-icon">▱</div><h3>Nothing saved yet</h3><p>Tap the bookmark on a post to keep it here.</p></div></section>
+
+    <section class="content-column hidden" id="profileView"><div class="page-heading"><p class="eyebrow">YOUR FLIXO IDENTITY</p><h1>My profile<span class="purple-text">.</span></h1></div><div class="profile-card card"><div class="profile-cover"></div><div class="profile-details"><span class="profile-avatar">V</span><h2>Victor</h2><p>@victor</p><p class="profile-bio">Making things, sharing moments, and building my corner of the internet.</p><div class="profile-stats"><span><b id="postCount">0</b> posts</span><span><b>0</b> followers</span><span><b>0</b> following</span></div></div></div><div class="section-heading"><div><h2>Your posts</h2><p>Everything you've shared</p></div></div><div id="profileFeed" class="feed-list"></div></section>
+
+    <footer>FLIXO <span>·</span> Your world. Your feed. <span class="footer-right">A little corner of the internet ✦</span></footer>
+  </main>
+  <aside class="rightbar"><div class="right-card card"><div class="right-title"><h3>Trending topics</h3><span class="trend-spark">↗</span></div><button class="trend-item" data-search="gaming"><span class="trend-number">01</span><span><b>#Gaming</b><small>Explore gaming posts</small></span><span class="trend-arrow">↗</span></button><button class="trend-item" data-search="creativity"><span class="trend-number">02</span><span><b>#Creativity</b><small>Explore creative posts</small></span><span class="trend-arrow">↗</span></button><button class="trend-item" data-search="community"><span class="trend-number">03</span><span><b>#Community</b><small>Explore community posts</small></span><span class="trend-arrow">↗</span></button></div><div class="right-card card tip-card"><div class="tip-icon">✦</div><p class="eyebrow">A LITTLE REMINDER</p><h3>Your voice belongs here.</h3><p>Good things happen when people share what they love.</p><button id="tipPost" class="text-button">Share something →</button></div><div class="right-footer">About&nbsp;&nbsp; Guidelines&nbsp;&nbsp; Privacy<br><br>© 2026 FLIXO</div></aside>
+</div>
+
+<div class="modal-backdrop hidden" id="postModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal card"><div class="modal-header"><div><p class="eyebrow">MAKE A MOMENT</p><h2 id="modalTitle">Create a post</h2></div><button class="close-button" id="closeModal" aria-label="Close">×</button></div>
+  <div class="modal-user"><span class="avatar avatar-purple">V</span><span><b>Victor</b><small>@victor</small></span></div>
+  <textarea id="postText" maxlength="500" placeholder="What would you like to share?"></textarea>
+  <div class="modal-bottom"><span id="charCount">0 / 500</span><button class="primary-button" id="publishButton">Publish post <span>↗</span></button></div>
+  <p class="demo-note">Posts are saved in this browser for this demo.</p></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
